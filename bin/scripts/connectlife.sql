@@ -1,8 +1,8 @@
 # Connect Life schema MPD
 # 4 tables : Clients_GUID, Clients, Localisations, Societes
 
-CREATE DATABASE IF NOT EXISTS connect_life;
-USE connect_life;
+CREATE DATABASE IF NOT EXISTS connectlife_test;
+USE connectlife_test;
 
 CREATE TABLE IF NOT EXISTS Localisations
 (
