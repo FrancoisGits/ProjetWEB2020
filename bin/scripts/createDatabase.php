@@ -5,11 +5,11 @@ require ('../config/database.php');
 // fonction pour se connecter à la BDD
 function connectDb($dbName) {
     try {
-        $dsn = !$dbName ? 'mysql:host=' . DB_HOST . ';port=' . DB_PORT : DB_DSN;
+        $dsn = !$dbName ? 'mysql:host=' . DB_HOST . ';port=' . DB_PORT : 'mysql:dbname=connectlife_test' . ';host=' . DB_HOST . ';port=' . DB_PORT;
         echo $dsn;
         $db = new PDO ($dsn, DB_USER, DB_PASS);
     } catch (PDOException $e) {
-        echo 'erreur : ' .$e->getMessage();
+        echo 'erreur connectDb() : ' . $e->getMessage() . "\r\n";
     }
     return $db;
 }
@@ -21,30 +21,39 @@ function create(){
     $dbName = false;
     $db = connectDb($dbName);
 
-    echo "Script de création de BDD lancé \n";
+    echo "Script de création de BDD lancé \r\n";
 
     try {
         $content = utf8_encode(file_get_contents('.\connectlife.sql', FALSE, NULL));
-        echo "C'est parti ! \n";
+        echo "C'est parti ! \r\n";
         $db->exec($content);
-        echo "C'est fini ! \n";
+        echo "C'est fini ! \r\n";
     } catch (Exception $e) {
-        echo 'erreur : ' . $e->getMessage();
+        echo 'erreur create() : ' . $e->getMessage() . "\r\n";
     }
+    return $db;
 }
 
-
-// TODO : finir fonction initLocalisation
 // function pour insérer les CP/Ville
-//function initLocalisation() {
-//    echo "Script de remplissage CP/Ville lancé ! \n";
-//    try {
-//
-//
-//    } catch (Exception $e) {
-//        echo 'erreur : ' . $e->getMessage();
-//    }
-//
-//}
+function initLocalisation() {
+    $withDbName = true;
+    $db = connectDb($withDbName);
+
+    echo "Script de fixtures CP/Ville lancé ! \n";
+
+    try {
+        $handle = fopen('../scripts/connectlife_localisations_data.sql', 'rb');
+        while(feof($handle) !== true) {
+            $buffer = fgets($handle);
+            $db->exec(utf8_encode($buffer));
+        }
+        fclose($handle);
+        echo "Fini ! \r\n";
+    } catch (Exception $e) {
+        echo 'erreur initLocalisation() : ' . $e->getMessage() . "\r\n";
+    }
+
+}
 
 create();
+initLocalisation();
