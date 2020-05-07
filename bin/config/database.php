@@ -1,7 +1,8 @@
 <?php
 
 // Recuperation du fichier de config .json
-$content = utf8_decode(file_get_contents('../config/db_config.json', FALSE, NULL));
+$content = utf8_decode(file_get_contents(__DIR__ . '\db_config.json', FALSE, NULL));
+
 
 // Récupère une chaîne encodée JSON et la converti en tableau
 $database_config = json_decode($content,true, 512,JSON_THROW_ON_ERROR);
@@ -18,6 +19,7 @@ define('DB_DSN', 'mysql:dbname=connect_life' . ';host=' . DB_HOST . ';port=' . D
 // Init du nouveau PDO avec les constantes
 try {
     $db = new PDO(DB_DSN, DB_USER, DB_PASS);
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     echo 'erreur : ' . $e->getMessage() . "\r\n";
 }
