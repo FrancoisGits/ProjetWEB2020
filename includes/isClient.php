@@ -6,5 +6,3 @@ try {
     echo "<script>alert(\"" . $e->getMessage() . "\")</script>";
     die();
 }
-
-?>

@@ -14,8 +14,8 @@ switch ($request) {
 
         if ((isset($resultat["guidInit"])) && $resultat["guidClient"] == null) {
             $_SESSION["isSociete"] = $resultat["isSociete"] == 1 ? true : false;
-//            header( 'Location: accueil.php');
-//            exit();
+            header( 'Location: accueil.php');
+            exit();
 
         } else if ((isset($resultat["guidInit"])) && (isset($resultat["guidClient"])) && $resultat["guidInit"] == $resultat["guidClient"]) {
             header('Location:formDone.php');
