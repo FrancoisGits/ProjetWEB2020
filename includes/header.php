@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -6,8 +7,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ConnectLife</title>
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
-<h1>Bienvenue sur ConnectLife !</h1>
-<img src="./assets/images/logo_connect_life_trans.png" alt="logo_connect_life_trans">
+    <header>
+        <div id = image_logo><img src="../assets/images/logo_connect_life_trans.png" alt="logo_connect_life_trans"></div>
+    </header>
