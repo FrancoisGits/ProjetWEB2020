@@ -1,0 +1,80 @@
+
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+#logo{
+    justify-content: center;
+    width: 33%;
+    height: 200px;
+    display: flex;
+    margin: auto;
+}
+
+
+.pAccueil, .bAccueil, .pError{
+    margin-top: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size: x-large;
+}
+
+.img404{
+    width: 5%;
+    display: block;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.partpro{
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto 100px auto;
+    width: 80%;
+}
+.button{
+    display: block;
+    width: 200px;
+    height: 40px;
+    margin: 20px auto auto auto;
+    line-height: 40px;
+    font-size: 18px;
+    color: whitesmoke;
+    text-decoration: none;
+    border: 2px solid whitesmoke;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+}
+.button span{
+    position: relative;
+    z-index: 2;
+}
+.button:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: lightskyblue;
+    transition: all .35s;
+}
+.button:hover{
+    color: dimgrey;
+}
+.button:hover:after{
+    width: 100%;
+}
+button {
+    background-color: black;
+}

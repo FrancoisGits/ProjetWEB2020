@@ -7,9 +7,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ConnectLife</title>
-    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
     <header>
-        <div id = image_logo><img src="../assets/images/logo_connect_life_trans.png" alt="logo_connect_life_trans"></div>
+        <div id = logo><img src="assets/images/logo_connect_life_trans.png" alt="logo_connect_life_trans"></div>
     </header>

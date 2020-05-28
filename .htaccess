@@ -2,4 +2,4 @@ RewriteEngine On
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule . index.php [QSA,L]
-ErrorDocument 404 /bin/404.php
+ErrorDocument 404 404.php
