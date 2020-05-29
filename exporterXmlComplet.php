@@ -19,17 +19,16 @@ $request = "SELECT
                 c.email
             FROM clients c
             LEFT JOIN  localisations l ON c.idVille = l.idVille
-            LEFT JOIN societes s ON s.idSociete = c.idSocieteCli
-            WHERE c.xml_generation = 0";
+            LEFT JOIN societes s ON s.idSociete = c.idSocieteCli";
 
 require './actions/xmlGenerator.php';
 
-$xmlGenerationTo1 = $db->query('UPDATE clients SET xml_generation = 1 WHERE xml_generation = 0');
 ?>
+
 <section>
     <div class="pAccueil">
         <p class="pAccueil">
-            Votre questionnaire fichier xml a bien été généré,<br><br>
+            Votre questionnaire fichier xml complet a bien été généré,<br><br>
             Pour le télécharger veuillez cliquer sur le bouton ci dessous.<br>
         </p><br><br>
         <div class="pAccueil">
@@ -38,7 +37,3 @@ $xmlGenerationTo1 = $db->query('UPDATE clients SET xml_generation = 1 WHERE xml_
             </a>
         </div>
 </section>
-
-
-
-
