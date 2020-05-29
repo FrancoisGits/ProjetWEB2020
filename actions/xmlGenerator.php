@@ -5,10 +5,10 @@ $xml = new DomDocument('1.0', 'utf-8');
 $xml->formatOutput = true;
 
 // ajouter le fichier .xsd dans le fichier xml avec le xsi:NoNamespaceSchemaLocation
-$xsd = $xml->createElementNS("http://www.w3.org/2001/XMLSchema-instance", 'Clients');
+$xsd = $xml->createElement('Clients');
 $xml->appendChild($xsd);
-$xsd->setAttributeNS('http://www.w3.org/2000/xmlns/', 'xmlns:g', 'clients.xsd');
-
+$xsd->setAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
+$xsd->setAttribute("xsi:noNamespaceSchemaLocation", "clientsXmlSchema.xsd");
 while ($client = $query->fetch(PDO::FETCH_ASSOC)) {
     $Client = $xml->createElement('Client');
     $xsd->appendChild($Client);
