@@ -78,3 +78,6 @@ body {
 button {
     background-color: black;
 }
+.error {
+    border : 1px solid red
+}

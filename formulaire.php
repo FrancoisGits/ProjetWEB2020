@@ -4,7 +4,7 @@ require"./bin/config/database.php";
 require("./includes/isClient.php");
 ?>
 <section>
-    <form action="./sql/requetesSql.php" class="container form" method="POST" id="form" onsubmit="return">
+    <form action="actions/insertUser.php" method="POST" id="formulaire" >
         <?php
         require "formulaires/civ_id_inputs.php";
         if($_SESSION['isSociete']) {
@@ -20,6 +20,7 @@ require("./includes/isClient.php");
         require "formulaires/email.php";
         require "formulaires/fin_form.php";
         ?>
+        <button id ="submitFormButton" type="submit">Valider</button>
     </form>
 </section>
 <?php require "./includes/footer.php"; ?>

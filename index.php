@@ -6,6 +6,7 @@ $request = $_SERVER['REQUEST_URI'];
 switch ($request) {
     case preg_match('(fic\?q=\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$)', $request) == 1 :
         $guid = $_GET['q'];
+        $_SESSION["guid"] = $guid;
         $_SESSION['client']= TRUE;
         $sqlRequest = $db->prepare("SELECT GUID.guid as guidInit, clients.guid as guidClient, GUID.isSociete FROM clients_guid GUID LEFT JOIN clients ON clients.guid = GUID.guid WHERE GUID.guid = UPPER(:guid)"); // tout faire en une requete
         $sqlRequest->execute([":guid" => $guid]);
