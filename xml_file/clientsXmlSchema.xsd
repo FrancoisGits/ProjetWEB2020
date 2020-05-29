@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="Clients" type="Clients"></xsd:element>  <!--pas de body donc balise fermante non obligatoire-->
+    <xsd:complexType name="Clients">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="Client" type="Client"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Client">
+        <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="guid"  type="xsd:string"></xsd:element>
+            <xsd:element minOccurs="1" maxOccurs="1" name="civilite" type="xsd:integer"></xsd:element>
+            <xsd:element minOccurs="1" maxOccurs="1" name="nom" type="xsd:string"></xsd:element>
+            <xsd:element minOccurs="1" maxOccurs="1" name="prenom" type="xsd:string"></xsd:element>
+            <xsd:element minOccurs="1" maxOccurs="1" name="nomSociete" type="xsd:string"></xsd:element>
+            <xsd:element minOccurs="1" maxOccurs="1" name="fonctionSociete" type="xsd:string"></xsd:element>
+            <xsd:element minOccurs="1" maxOccurs="1" name="adresse1" type="xsd:string"></xsd:element>
+            <xsd:element minOccurs="1" maxOccurs="1" name="adresse2" type="xsd:string"></xsd:element>
+            <xsd:element minOccurs="1" maxOccurs="1" name="nomVille" type="xsd:string"></xsd:element>
+            <xsd:element minOccurs="1" maxOccurs="1" name="codePostal" type="xsd:string"></xsd:element>
+            <xsd:element minOccurs="1" maxOccurs="1" name="telephone1" type="xsd:string"></xsd:element>
+            <xsd:element minOccurs="1" maxOccurs="1" name="telephone2" type="xsd:string"></xsd:element>
+            <xsd:element minOccurs="1" maxOccurs="1" name="email" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:integer"></xsd:attribute>
+    </xsd:complexType>
+</xsd:schema>

@@ -24,7 +24,6 @@ $request = "SELECT
 require './actions/xmlGenerator.php';
 
 ?>
-
 <section>
     <div class="pAccueil">
         <p class="pAccueil">
@@ -33,7 +32,8 @@ require './actions/xmlGenerator.php';
         </p><br><br>
         <div class="pAccueil">
             <a href="<?php echo $filePath ?>" download="<?php echo $fileName ?>">
-                <button type="button">Télécharger mon fichier</button>
+                <button type="button">Télécharger</button>
             </a>
         </div>
 </section>
+<?php require_once './includes/xsdDownload.php'; ?>
