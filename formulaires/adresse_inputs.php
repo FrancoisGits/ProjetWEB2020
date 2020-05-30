@@ -12,7 +12,7 @@
 
 <div class="container">
     <label for="codePostal">Code postal * :</label>
-    <input type="text" placeholder="75000" name="codePostal" id="codePostal" minlength="5" maxlength="5" pattern="^[0-9]{4,5}">
+    <input type="text" placeholder="75000" name="codePostal" id="codePostal" maxlength="5" pattern="^[0-9]{4,5}">
     <p class="messageErreur messageErreurCodePostal"></p>
 </div>
 

@@ -144,22 +144,31 @@ form.addEventListener('submit', function (e) {
             telFixe.classList.remove('error')
             telPortable.classList.remove('error')
             if (telFixe.value.trim() === '' && telPortable.value.trim() === '') {
+                console.log("Aucun numero")
                 telFixe.style.borderColor = "red"
                 telPortable.style.borderColor = "red"
                 document.querySelector('.messageErreurTel').textContent = 'Veuillez indiquer au moins un numéro de téléphone'
                 test = false
                 document.querySelector('.messageErreurTelFixe').textContent = 'Veuillez indiquer un numéro de téléphone valide'
                 document.querySelector('.messageErreurTelPortable').textContent = 'Veuillez indiquer un numéro de téléphone valide'
-            } else {
-                if (telFixe.value.trim !== '' && /^\d+$/.test(telFixe.value) === false) {
+            } else if (telFixe.value.trim() !== '' || telPortable.value.trim() !== '') {
+                document.querySelector('.messageErreurTel').textContent = ''
+                if (telFixe.value.trim() !== '' && /^\d+$/.test(telFixe.value) === false) {
                     test = false
+                    console.log("telfixe rouge telportable blanc")
                     telFixe.style.borderColor = 'red'
+                    telPortable.style.borderColor = "white"
+                    document.querySelector('.messageErreurTelPortable').textContent = ''
                     document.querySelector('.messageErreurTelFixe').textContent = 'Veuillez indiquer un numéro de téléphone valide'
-                } else if (telPortable.value.trim !== '' && /^\d+$/.test(telPortable.value) === false) {
+                } else if (telPortable.value.trim() !== '' && /^\d+$/.test(telPortable.value) === false) {
                     test = false
+                    console.log("telfixe blanc, telport rouge")
+                    telFixe.style.borderColor = 'white'
                     telPortable.style.borderColor = 'red'
                     document.querySelector('.messageErreurTelPortable').textContent = 'Veuillez indiquer un numéro de téléphone valide'
+                    document.querySelector('.messageErreurTelFixe').textContent = ''
                 } else {
+                    console.log("tel Ok")
                     document.querySelector('.messageErreurTelFixe').textContent = ''
                     document.querySelector('.messageErreurTelPortable').textContent = ''
                     document.querySelector('.messageErreurTel').textContent = ''
@@ -205,7 +214,7 @@ form.addEventListener('submit', function (e) {
 
         let email = document.querySelector('#email')
         email.classList.remove('error')
-        if (email.value == '') {
+        if (email.value.trim() == '') {
             email.classList.add('error')
             test = false
             document.querySelector('.messageErreurEmail').textContent = 'Veuillez indiquer un email valide'
