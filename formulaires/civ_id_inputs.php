@@ -1,10 +1,10 @@
 <div class="civilite">
     <span class="civilite-label">Civilité * :</span>
     <div class="checkbox">
-        <input type="checkbox" name="civilite" id="madame" value="0">
-        <label for="madame">Mme</label>
-        <input type="checkbox" name="civilite" id="monsieur" value="1">
-        <label for="monsieur">M</label>
+        <input type="radio" name="civilite" id="madame" value="0">
+        <label for="madame">Madame</label>
+        <input type="radio" name="civilite" id="monsieur" value="1">
+        <label for="monsieur">Monsieur</label>
     </div>
 </div>
 <div class="container">

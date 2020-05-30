@@ -1,10 +1,230 @@
-
-
+html {
+    height: 100%;
+}
 body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     background-color: black;
     color: white;
-    font-family: 'Roboto', sans-serif;
 }
+.messageErreurTel {
+    margin-left: 0;
+    color: red;
+}
+
+.messageErreur {
+    height: 1px;
+    margin: 1px;
+}
+
+/*img {*/
+/*    margin-top: 1%;*/
+/*    width: 40%;*/
+/*    display: block;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto*/
+/*}*/
+input {
+    background-color: black;
+    border: white solid 3px;
+    color: white;
+    width: 42%;
+    padding: 5px;
+}
+
+.container label, span {
+    float:left;
+    width:180px;
+}
+
+.container {
+    margin-left: 30%;
+    margin-top: 20px;
+}
+
+.sub input {
+    background-color: black;
+    border: white solid 2px;
+    color: white;
+    float: left;
+    margin-left: 67%;
+    width: auto;
+}
+.champs {
+    margin-left: 60%;
+}
+
+#codePostal {
+    width: 18%;
+}
+
+.civilite {
+    margin-left: 30%;
+    display: flex;
+    margin-top: 1%;
+}
+
+.errorCheck {
+    border:  2px solid red;
+    height: 25px;
+    width : 25px;
+
+}
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label::before {
+    content:'';
+    border: 2px solid white;
+    padding: 3px 12px;
+    margin-right: 5px;
+}
+
+input[type="radio"]:checked + label::before {
+    content:'';
+    background-color: white;
+}
+
+/* message erreur + input color red */
+.error {
+    border-color: red;
+}
+
+.container .messageErreur {
+    color: red;
+    margin-left: 14%;
+}
+
+select {
+    background-color: black;
+    border: white solid 1px;
+    color: black;
+    width: 42%;
+    padding: 5px;
+}
+.messageErreurVille {
+    margin-top: 24px;
+}
+
+.select-wrapper {
+    display:block;
+    overflow-x:hidden;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    border-left: 1px solid white;
+    width: 43%;
+    cursor:pointer;
+}
+
+.select-wrapper select {
+    min-width: 94%;
+    cursor: pointer;
+    text-shadow: 0 0 0 #000;
+    -webkit-appearance: none;
+    outline: none;
+    white-space: nowrap;
+    width: 43%;
+    color: white;
+    border-right: 2px solid white;
+}
+
+.select-wrapper:after {
+    content:"V";
+    display:block;
+    position:relative;
+    float:right;
+    top:-22px;
+    right: 1px;
+    width:34px;
+    text-align:center;
+    margin-bottom:-25px;
+}
+
+/* input number desactivation des fleches
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+/* Chrome */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin:0;
+}
+
+select {
+    background-color: black;
+    border: white solid 1px;
+    color: black;
+    width: 42%;
+    padding: 5px;
+}
+.messageErreurVille {
+    margin-top: 24px;
+}
+
+
+@media screen and (max-width: 800px){
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin-left: 25%;
+    }
+    img {
+        margin-top: 1%;
+        width: 50%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+    }
+    #codePostal {
+        width: 32%;
+    }
+    input, select {
+        width: 60%;
+        padding: 5px;
+    }
+
+    .sub input {
+        margin-left: 62%;
+        width: auto;
+    }
+    .champs {
+        margin-left: 25%;
+    }
+
+    .civilite {
+        margin-left: 25%;
+        display: flex;
+        flex-direction: column;
+    }
+    .container #nom{
+        margin-top: 0;
+    }
+    .container .messageErreur {
+        height: 0;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .checkbox {
+        display: flex;
+        flex-direction: column;
+    }
+    .civilite label {
+        margin-top: 2%;
+    }
+}
+
+
+/*body {*/
+/*    background-color: white;*/
+/*    color: white;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*}*/
 
 #logo{
     justify-content: center;
@@ -15,69 +235,66 @@ body {
 }
 
 
-.pAccueil, .bAccueil, .pError{
-    margin-top: 7%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    font-family: 'Roboto', sans-serif;
-    font-size: x-large;
-}
+/*.pAccueil, .bAccueil, .pError{*/
+/*    margin-top: 7%;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*    height: 50px;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-size: x-large;*/
+/*}*/
 
-.img404{
-    width: 5%;
-    display: block;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-}
+/*.img404{*/
+/*    width: 5%;*/
+/*    display: block;*/
+/*    margin: auto;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
 
-.partpro{
-    display: flex;
-    flex-direction: column;
-    margin: 30px auto 100px auto;
-    width: 80%;
-}
-.button{
-    display: block;
-    width: 200px;
-    height: 40px;
-    margin: 20px auto auto auto;
-    line-height: 40px;
-    font-size: 18px;
-    color: whitesmoke;
-    text-decoration: none;
-    border: 2px solid whitesmoke;
-    letter-spacing: 2px;
-    text-align: center;
-    position: relative;
-    transition: all .35s;
-}
-.button span{
-    position: relative;
-    z-index: 2;
-}
-.button:after{
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: lightskyblue;
-    transition: all .35s;
-}
-.button:hover{
-    color: dimgrey;
-}
-.button:hover:after{
-    width: 100%;
-}
-button {
-    background-color: black;
-}
-.error {
-    border : 1px solid red
-}
+/*.partpro{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    margin: 30px auto 100px auto;*/
+/*    width: 80%;*/
+/*}*/
+/*.button{*/
+/*    display: block;*/
+/*    width: 200px;*/
+/*    height: 40px;*/
+/*    margin: 20px auto auto auto;*/
+/*    line-height: 40px;*/
+/*    font-size: 18px;*/
+/*    color: whitesmoke;*/
+/*    text-decoration: none;*/
+/*    border: 2px solid whitesmoke;*/
+/*    letter-spacing: 2px;*/
+/*    text-align: center;*/
+/*    position: relative;*/
+/*    transition: all .35s;*/
+/*}*/
+/*.button span{*/
+/*    position: relative;*/
+/*    z-index: 2;*/
+/*}*/
+/*.button:after{*/
+/*    position: absolute;*/
+/*    content: "";*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 0;*/
+/*    height: 100%;*/
+/*    background: lightskyblue;*/
+/*    transition: all .35s;*/
+/*}*/
+/*.button:hover{*/
+/*    color: dimgrey;*/
+/*}*/
+/*.button:hover:after{*/
+/*    width: 100%;*/
+/*}*/
+/*!*button {*!*/
+/*!*    background-color: black;*!*/
+/*!*}*!*/
