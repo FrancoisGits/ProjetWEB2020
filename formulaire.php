@@ -20,7 +20,9 @@ require("./includes/isClient.php");
         require "formulaires/email.php";
         require "formulaires/fin_form.php";
         ?>
-        <button id ="submitFormButton" type="submit">Valider</button>
+        <div class="sub">
+            <input type="submit" class="submit" value="Valider">
+        </div>
     </form>
 </section>
 <?php require "./includes/footer.php"; ?>

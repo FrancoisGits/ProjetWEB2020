@@ -1,7 +1,14 @@
-<div>
-    <span>* Champs requis</span>
+<div class="champs">
+    <p>* : champ à saisie obligatoire</p>
 </div>
-<div>
 
-</div>
+
+
+
+<!--<div>-->
+<!--    <span>* Champs requis</span>-->
+<!--</div>-->
+<!--<div>-->
+<!---->
+<!--</div>-->
 
