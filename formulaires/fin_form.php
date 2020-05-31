@@ -2,9 +2,6 @@
     <p>* : champ à saisie obligatoire</p>
 </div>
 
-
-
-
 <!--<div>-->
 <!--    <span>* Champs requis</span>-->
 <!--</div>-->

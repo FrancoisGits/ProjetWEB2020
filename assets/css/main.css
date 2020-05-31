@@ -18,13 +18,13 @@ body {
     margin: 1px;
 }
 
-/*img {*/
-/*    margin-top: 1%;*/
-/*    width: 40%;*/
-/*    display: block;*/
-/*    margin-left: auto;*/
-/*    margin-right: auto*/
-/*}*/
+img {
+    margin-top: 1%;
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
 input {
     background-color: black;
     border: white solid 3px;
@@ -105,7 +105,8 @@ select {
     padding: 5px;
 }
 .messageErreurVille {
-    margin-top: 24px;
+    height: 1px;
+    margin: 1px;
 }
 
 .select-wrapper {
@@ -161,9 +162,6 @@ select {
     color: black;
     width: 42%;
     padding: 5px;
-}
-.messageErreurVille {
-    margin-top: 24px;
 }
 
 
@@ -226,13 +224,13 @@ select {
 /*    font-family: 'Roboto', sans-serif;*/
 /*}*/
 
-#logo{
-    justify-content: center;
-    width: 33%;
-    height: 200px;
-    display: flex;
-    margin: auto;
-}
+/*#logo{*/
+/*    justify-content: center;*/
+/*    width: 33%;*/
+/*    height: 200px;*/
+/*    display: flex;*/
+/*    margin: auto;*/
+/*}*/
 
 
 /*.pAccueil, .bAccueil, .pError{*/

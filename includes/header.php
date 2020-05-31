@@ -11,5 +11,5 @@
 </head>
 <body>
     <header>
-        <div id = logo><img src="assets/images/logo_connect_life_trans.png" alt="logo_connect_life_trans"></div>
+        <div id = logo><img src="assets/images/logo_connect_life_vecto.png" alt="logo_connect_life_vecto"></div>
     </header>
