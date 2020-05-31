@@ -42,10 +42,10 @@ if (!empty($_POST)) {
             $_SESSION["tel2"] = null;
         }
         $_SESSION["email"] = $_POST["email"];
-        var_dump($_SESSION);
+//        var_dump($_SESSION);
 
         // Verifications avant ajout BDD
-        if (!empty($_POST["civilite"]) && ($_POST["civilite"] === "0" || $_POST["civilite"] === "1")) {
+        if (isset($_POST["civilite"]) && ($_POST["civilite"] === "0" || $_POST["civilite"] === "1")) {
             $client["civilite"] = intval($_POST["civilite"]);
         } else {
             throw new Exception('civilite must be 0 or 1 or notnull');
@@ -101,6 +101,8 @@ if (!empty($_POST)) {
             throw new Exception('ville must be not null');
         }
         if ($_SESSION["isSociete"] === false) {
+            $client['nomSociete'] = null;
+            $client['posteSociete'] = null;
             if (!empty($_POST["telFixe"])) {
                 $client["tel1"] = trim($_POST["telFixe"]);
             } else {
@@ -130,7 +132,7 @@ if (!empty($_POST)) {
     if (!empty($resultat['guid'])) {
 
         $client['guid'] = $resultat['guid'];
-        $sqlRequest = $db->prepare("SELECT idVille FROM localisation WHERE nomVille = :nomVille  ");
+        $sqlRequest = $db->prepare("SELECT idVille FROM localisations WHERE nomVille = :nomVille  ");
         $sqlRequest->execute([":nomVille" => $client["ville"]]);
         $resultat = $sqlRequest->fetch();
 
@@ -182,6 +184,8 @@ if (!empty($_POST)) {
         $prep = $db->prepare($requestInsertClients);
         $prep->execute($params);
 
+        header('Location: ../formOK.php');
+        exit();
 
     } else {
         header('Location: ../emailInvalide.php');
@@ -189,6 +193,6 @@ if (!empty($_POST)) {
     }
 
 } else {
-    echo "erreur tableau valeur vide VIDE";
+    echo "erreur tableau valeur vide";
 }
 
