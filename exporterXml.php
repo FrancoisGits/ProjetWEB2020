@@ -8,7 +8,7 @@ $request = "SELECT
                 c.civilite,
                 c.nom,
                 c.prenom,
-                s.nomSociete,
+                c.nomSociete,
                 c.fonctionSociete,
                 c.adresse1,
                 c.adresse2,
@@ -19,7 +19,6 @@ $request = "SELECT
                 c.email
             FROM clients c
             LEFT JOIN  localisations l ON c.idVille = l.idVille
-            LEFT JOIN societes s ON s.idSociete = c.idSocieteCli
             WHERE c.xml_generation = 0";
 
 require './actions/xmlGenerator.php';

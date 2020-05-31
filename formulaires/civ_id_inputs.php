@@ -1,12 +1,12 @@
 <div class="civilite">
     <span class="civilite-label">Civilité * :</span>
     <label class="radio">
-        <input type="radio" value ="Madame" id="madame" name="civilite">
+        <input type="radio" value="0" id="madame" name="civilite">
         Madame
         <span></span>
     </label>
     <label class="radio">
-        <input type="radio" value ="Monsieur" id="monsieur" name="civilite">
+        <input type="radio" value="1" id="monsieur" name="civilite">
         Monsieur
         <span></span>
     </label>

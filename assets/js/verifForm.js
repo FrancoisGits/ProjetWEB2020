@@ -141,7 +141,7 @@ form.addEventListener('submit', function (e) {
         let telFixe = document.querySelector('#telFixe')
         let telPortable = document.querySelector('#telPortable')
 
-        if ((typeof (telDirect) != 'undefined' && telDirect != null) || (typeof (telPortable) != 'undefined' && telPortable != null)) {
+        if ((typeof (telFixe) != 'undefined' && telFixe != null) || (typeof (telPortable) != 'undefined' && telPortable != null)) {
             telFixe.classList.remove('error')
             telPortable.classList.remove('error')
             if (telFixe.value.trim() === '' && telPortable.value.trim() === '') {

@@ -11,7 +11,7 @@ switch ($request) {
         $sqlRequest = $db->prepare("SELECT GUID.guid as guidInit, clients.guid as guidClient, GUID.isSociete FROM clients_guid GUID LEFT JOIN clients ON clients.guid = GUID.guid WHERE GUID.guid = UPPER(:guid)"); // tout faire en une requete
         $sqlRequest->execute([":guid" => $guid]);
         $resultat = $sqlRequest->fetch();
-        var_dump($resultat);
+        // var_dump($resultat);
 
         if ((isset($resultat["guidInit"])) && $resultat["guidClient"] == null) {
             $_SESSION["isSociete"] = $resultat["isSociete"] == 1 ? true : false;
