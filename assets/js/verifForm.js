@@ -5,23 +5,24 @@ form.addEventListener('submit', function (e) {
 
         let test = true
 
-        const checkMadame = document.querySelector("#madame")
-        const checkMonsieur = document.querySelector("#monsieur")
-
-        // if (checkMadame.checked == false && checkMonsieur.checked == false) {
-        //     checkMadame.style.borderColor = "red"
-        //     document.querySelector('.messageErreurCivilite').textContent = 'Veuillez indiquez votre civilité'
-        //     console.log('pas coché')
-        //     test = false
-        //     console.log()
-        // } else if (checkMadame.checked == true && checkMonsieur.checked == true) {
-        //     document.querySelector('.messageErreurCivilite').textContent = 'Veuillez indiquez une seule civilité'
-        //     console.log('2 cochées')
-        //     test = false
-        // } else {
-        //     document.querySelector('.messageErreurCivilite').textContent = ''
-        //     console.log('coché')
-        // }
+        let checkMadame = document.querySelector('#madame')
+        let checkMonsieur = document.querySelector('#monsieur')
+        let borders = document.querySelectorAll('.radio span')
+        if (checkMadame.checked === false && checkMonsieur.checked === false) {
+            for (let border of borders) {
+                border.style.borderColor = 'red'
+            }
+            document.querySelector('.messageErreurCivilite').textContent = 'Veuillez indiquez votre civilité'
+            console.log('pas coché')
+            test = false
+        } else {
+            document.querySelector('.messageErreurCivilite').textContent = ''
+            console.log('coché')
+            for (let border of borders) {
+                border.style.borderColor = 'white'
+            }
+            test = true
+        }
 
         //verification sur le nom
         let nom = document.querySelector('#nom')
@@ -153,21 +154,32 @@ form.addEventListener('submit', function (e) {
                 document.querySelector('.messageErreurTelPortable').textContent = 'Veuillez indiquer un numéro de téléphone valide'
             } else if (telFixe.value.trim() !== '' || telPortable.value.trim() !== '') {
                 document.querySelector('.messageErreurTel').textContent = ''
-                if (telFixe.value.trim() !== '' && /^\d+$/.test(telFixe.value) === false) {
+                if (telFixe.value.trim() !== '' && telPortable.value.trim() === '' && /^\d+$/.test(telFixe.value) === false) {
                     test = false
                     console.log("telfixe rouge telportable blanc")
+                    console.log(telPortable.value)
                     telFixe.style.borderColor = 'red'
                     telPortable.style.borderColor = "white"
                     document.querySelector('.messageErreurTelPortable').textContent = ''
                     document.querySelector('.messageErreurTelFixe').textContent = 'Veuillez indiquer un numéro de téléphone valide'
-                } else if (telPortable.value.trim() !== '' && /^\d+$/.test(telPortable.value) === false) {
+                }
+                if (telPortable.value.trim() !== '' && telFixe.value.trim() === '' && /^\d+$/.test(telPortable.value) === false) {
                     test = false
                     console.log("telfixe blanc, telport rouge")
                     telFixe.style.borderColor = 'white'
                     telPortable.style.borderColor = 'red'
                     document.querySelector('.messageErreurTelPortable').textContent = 'Veuillez indiquer un numéro de téléphone valide'
                     document.querySelector('.messageErreurTelFixe').textContent = ''
-                } else {
+                }
+                if (telFixe.value.trim() !== '' && /^\d+$/.test(telFixe.value) === false && telPortable.value.trim() !== '' && /^\d+$/.test(telPortable.value) === false) {
+                    console.log("2 tel rouges")
+                    test = false
+                    telFixe.style.borderColor = 'red'
+                    telPortable.style.borderColor = 'red'
+                    document.querySelector('.messageErreurTelPortable').textContent = 'Veuillez indiquer un numéro de téléphone valide'
+                    document.querySelector('.messageErreurTelFixe').textContent = 'Veuillez indiquer un numéro de téléphone valide'
+                }
+                if ((telFixe.value.trim() !== '' && /^\d+$/.test(telFixe.value) === true) || (telPortable.value.trim() !== '' && /^\d+$/.test(telPortable.value) === true)) {
                     console.log("tel Ok")
                     document.querySelector('.messageErreurTelFixe').textContent = ''
                     document.querySelector('.messageErreurTelPortable').textContent = ''

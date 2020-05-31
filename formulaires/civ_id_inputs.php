@@ -1,12 +1,17 @@
 <div class="civilite">
     <span class="civilite-label">Civilité * :</span>
-    <div class="checkbox">
-        <input type="radio" name="civilite" id="madame" value="0">
-        <label for="madame">Madame</label>
-        <input type="radio" name="civilite" id="monsieur" value="1">
-        <label for="monsieur">Monsieur</label>
-    </div>
+    <label class="radio">
+        <input type="radio" value ="Madame" id="madame" name="civilite">
+        Madame
+        <span></span>
+    </label>
+    <label class="radio">
+        <input type="radio" value ="Monsieur" id="monsieur" name="civilite">
+        Monsieur
+        <span></span>
+    </label>
 </div>
+
 <div class="container">
     <p class="messageErreur messageErreurCivilite"></p>
 </div>
