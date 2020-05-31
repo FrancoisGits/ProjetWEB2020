@@ -123,7 +123,7 @@ if (!empty($_POST)) {
     } catch (Exception $e) {
         die($e->getMessage());
     }
-
+    // on verifie que l'email trouve bien correspondance avec un guid dans la table des guids.
     $sqlRequest = $db->prepare("SELECT guid FROM clients_guid WHERE email = :email  ");
     $sqlRequest->execute([":email" => $client["email"]]);
     $resultat = $sqlRequest->fetch();
@@ -193,6 +193,6 @@ if (!empty($_POST)) {
     }
 
 } else {
-    echo "erreur tableau valeur vide";
+    echo "erreur : tableau POST est vide";
 }
 
