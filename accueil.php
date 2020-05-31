@@ -11,7 +11,7 @@ require_once("./includes/isClient.php");
             Vous devrez obligatoirement renseigner la même adresse email que l'adresse de contact.<br><br>
         </p>
      <div class="pAccueil">
-        <a class="button" href="formulaire.php"><span>Questionnaire</span></a>
+        <a class="button" href="formulaire.php">Formulaire</a>
     </div>
 </section>
 <?php require_once("./includes/footer.php"); ?>

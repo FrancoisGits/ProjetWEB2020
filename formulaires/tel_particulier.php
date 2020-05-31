@@ -5,12 +5,12 @@
 
 <div class="container">
     <label for="telFixe">Téléphone fixe :</label>
-    <input type="text" name="telFixe" id="telFixe" minlength="10" maxlength="10">
+    <input value="<?php if (isset($_SESSION['tel1'])){echo $_SESSION['tel1'];} ?>" type="text" name="telFixe" id="telFixe" minlength="10" maxlength="10">
     <p class="messageErreur messageErreurTelFixe"></p>
 </div>
 
 <div class="container">
     <label for="telPortable">Téléphone portable  :</label>
-    <input type="text" name="telPortable" id="telPortable" minlength="10" maxlength="10">
+    <input value="<?php if (isset($_SESSION['tel2'])){echo $_SESSION['tel2'];} ?>" type="text" name="telPortable" id="telPortable" minlength="10" maxlength="10">
     <p class="messageErreur messageErreurTelPortable"></p>
 </div>
