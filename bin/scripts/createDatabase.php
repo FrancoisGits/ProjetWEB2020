@@ -5,7 +5,7 @@ require ('../config/database.php');
 // fonction pour se connecter à la BDD
 function connectDb($dbName) {
     try {
-        $dsn = !$dbName ? 'mysql:host=' . DB_HOST . ';port=' . DB_PORT : 'mysql:dbname=connectlife_test' . ';host=' . DB_HOST . ';port=' . DB_PORT;
+        $dsn = !$dbName ? 'mysql:host=' . DB_HOST . ';port=' . DB_PORT : 'mysql:dbname=connect_life' . ';host=' . DB_HOST . ';port=' . DB_PORT;
         echo $dsn;
         $db = new PDO ($dsn, DB_USER, DB_PASS);
     } catch (PDOException $e) {
@@ -55,5 +55,6 @@ function initLocalisation() {
 
 }
 
+//execution des scripts
 create();
 initLocalisation();

@@ -1,5 +1,5 @@
 INSERT INTO clients_guid (`guid`,`nom`,`email`,`isSociete`) VALUES ('DE40FF11-340F-3184-4083-8DC602387CB1','Finch','neque.sed@gravidamaurisut.ca',1);
-INSERT INTO clients_guid (`guid`,`nom`,`email`,`isSociete`) VALUES ('DE40FF11-340F-3184-4083-8DC602387CB1','Finch','neque.sed@gmail.com',0);
+INSERT INTO clients_guid (`guid`,`nom`,`email`,`isSociete`) VALUES ('DE40FF11-1234-DS14-4083-8DC602387CB1','Finch','neque.sed@gmail.com',0);
 INSERT INTO clients_guid (`guid`,`nom`,`email`,`isSociete`) VALUES ('C0B50050-0753-BE6B-D70F-D505A40A24A3','Welch','tempus.eu@ridiculusmus.net',1);
 INSERT INTO clients_guid (`guid`,`nom`,`email`,`isSociete`) VALUES ('40FB1A0A-306A-6315-5919-B66858030E9F','Rowland','sit.amet@amet.com',0);
 INSERT INTO clients_guid (`guid`,`nom`,`email`,`isSociete`) VALUES ('FE2D50C0-B2F8-620A-0FEB-69A96B882A6D','Reeves','eu.dolor@mollislectuspede.co.uk',0);
