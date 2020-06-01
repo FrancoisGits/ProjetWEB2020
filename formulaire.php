@@ -3,7 +3,7 @@ require "./includes/header.php";
 require"./bin/config/database.php";
 require("./includes/isClient.php");
 ?>
-<section>
+<section class="footerPosition">
     <form action="actions/insertUser.php" method="POST" id="formulaire" >
         <?php
         require "formulaires/civ_id_inputs.php";

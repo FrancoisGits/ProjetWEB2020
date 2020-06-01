@@ -23,10 +23,13 @@ $request = "SELECT
 require './actions/xmlGenerator.php';
 ?>
     <section>
-        <div class="paragraphe-done">
-            <p>Votre questionnaire fichier xml COMPLET a bien été généré.</p>
+        <div class="paragraphe-accueil">
+            <p>Votre fichier xml COMPLET a bien été généré.</p>
             <p>Pour le télécharger veuillez cliquer sur le bouton ci dessous.</p>
-            <a href="<?php echo $filePath ?>" download="<?php echo $fileName ?>" class="buttonXml">Télécharger mon fichier</a>
+
+        </div>
+        <div class="paragraphe-milieu">
+            <a href="<?php echo $filePath ?>" download="<?php echo $fileName ?>" class="button">Télécharger</a>
         </div>
     </section>
 
@@ -42,5 +45,5 @@ require './actions/xmlGenerator.php';
         xhttp.send();
     }
 </script>
-<?php require_once './includes/xsdDownload.php'; ?>
-<? require_once './includes/footer.php';
+<?php require_once './includes/xsdDownload.php';
+ require_once './includes/footer.php';

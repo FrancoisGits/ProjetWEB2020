@@ -14,16 +14,7 @@ body {
 
 /*PARAGRAPHE GENERAL*/
 
-.paragraphe{
-    margin-top: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    font-family: 'Roboto', sans-serif;
-    font-size: x-large;
-}
+
 
 
 .paragraphe p {
@@ -227,17 +218,18 @@ input:hover{
 
 /* //////////////// PAGE ACCUEIL ///////////// */
 
-.logoLike {
-    width: 11%;
-    margin-left: 45%;
-    margin-top: 2%;
-}
 
-.paragraphe-acceuil {
+
+.paragraphe-accueil {
     margin-left: 30%;
-    margin-top: 2%
+    margin-top: 2%;
+    margin-right: 30%;
+    display: flex;
+    text-align: justify;
+    flex-direction: column;
+    font-size: x-large;
 }
-.paragraphe-acceuil p {
+.paragraphe-accueil p {
     margin-top: 3%;
 }
 
@@ -264,31 +256,35 @@ input:hover{
     color: rgb(64, 144, 163);;
 }
 
-/* //////////////// PAGE FORM DONE ///////////// */
+/* //////////// LOGO PAGE //////////// */
+.logoPage {
+    width: 11%;
+    margin-left: 45%;
+    margin-top: 3%;
+}
 
 .logoCroixRouge {
-    width: 10%;
+    width: 11%;
+    margin-left: 45%;
+    margin-top: 3%;
 }
 
-.paragraphe-done {
-    margin-top: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    font-size:x-large;
-    flex-direction: column;
-}
+/* //////////////// PAGE FORM DONE ///////////// */
+
+/*.paragraphe-done {*/
+/*    margin-top: 10%;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*    height: 50px;*/
+/*    font-size:x-large;*/
+/*    flex-direction: column;*/
+/*}*/
 
 /* ////////////////// EMAIL INVALID //////////// */
 
 
-.logoForbiden {
-    margin-top: 3%;
-    margin-left: 45%;
-    width: 10%;
-}
 
 .buttonForm {
     margin-top: 12px;
@@ -307,7 +303,6 @@ input:hover{
 
 /* ////////////////////// PAGE XML COMPLET ET NORMAL ///////////////// */
 .buttonXml {
-    margin-top: 12px;
     border: 2px solid white;
     background-color: black;
     color: white;
@@ -322,32 +317,54 @@ input:hover{
     color: rgb(64, 144, 163);
 }
 
-.paragrapheXml{
-    margin-top: 8%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    font-family: 'Roboto', sans-serif;
-    font-size: x-large;
-}
+
+
+
+
+
 @media screen and (max-width: 700px){
 
-    /* ////////// SELECT INPUT /////////// */
 
-    .select-wrapper {
-        display:block;
-        overflow-x:hidden;
-        border-top: 2px solid white;
-        border-bottom: 2px solid white;
-        border-right: 2px solid white;
-        border-left: 1px solid white;
-        width: 63%;
-        cursor:pointer;
+    /* //////////////// PAGE ACCUEIL ///////////// */
+
+    .paragraphe-accueil {
+        margin-top: 5%;
+        margin-right: 7%;
+        margin-left: 7%;
+        font-size: initial;
     }
 
+
+
+
+    /* //////////////// PAGE FORM DONE /////////// */
+    /*.paragraphe-done {*/
+    /*    margin-top: 3%;*/
+    /*    margin-right: 7%;*/
+    /*    margin-left: 7%;*/
+    /*    font-size: initial;*/
+    /*    font-size: initial;*/
+    /*}*/
+
+    /* ////////////// LOGO /////////// */
+    .logoCroixRouge {
+        width: 20%;
+        margin-left: 40%;
+        margin-top: 20%;
+    }
+    .logoPage {
+        width: 20%;
+        margin-left: 40%;
+        margin-top: 20%;
+    }
+    .logoConnectife {
+        width: 52%;
+    }
+
+
+
+
+    /* ////////// SELECT INPUT /////////// */
     .select-wrapper select {
         min-width: 84%;
         cursor: pointer;
@@ -360,14 +377,26 @@ input:hover{
     }
 
     .select-wrapper:after {
-        top: 5px;
-        right: 2px;
+        top: -21px;
+        right: 0px;
         width: 30px;
+
     }
+    .select-wrapper {
+         display:block;
+         overflow-x:hidden;
+         border-top: 2px solid white;
+         border-bottom: 2px solid white;
+         border-right: 2px solid white;
+         border-left: 1px solid white;
+         width: 63%;
+         cursor:pointer;
+     }
 
     input {
         width: 60%;
         padding: 5px;
+        margin-top: 3%;
     }
 
     #codePostal {
@@ -379,6 +408,7 @@ input:hover{
         display: flex;
         flex-direction: column;
         margin-left: 25%;
+        margin-top: 10%;
     }
     .radio +.radio {
         margin-left: 0;
@@ -425,30 +455,9 @@ input:hover{
         margin-top: 2%;
     }
 
-    /* /////////// PAGE ACCUEIL ///////// */
-    .paragraphe-acceuil {
-        margin-top: 3%;
-        margin-left: 3%;
-    }
-    .paragraphe-acceuil p {
-        margin-top: 3%;
-        display:flex;
-        justify-content: center ;
-        align-items: center;
-        font-size: initial;
-    }
 
-    .paragraphe-milieu {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
 
-    /* //////////////// PAGE FORM DONE /////////// */
-    .paragraphe-done {
-        margin-top: 23%;
-        font-size: initial;
-    }
+
 
 }
 @media screen and (max-width: 1400px) and (min-width: 1000px){
@@ -537,38 +546,17 @@ input:hover{
 
 }
 
-.imgFormOk{
-    width: 12%;
-    display: block;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-    margin-top: 7%;
-}
-
-.img404{
-    width: 8%;
-    display: block;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-    margin-top: 7%;
-
-}
-
 footer{
     display: block;
     width: 100%;
-    height: 50px;
     border-top: 1px solid white;
-    margin-top: 500px;
-
+    position: relative;
+    bottom: 0;
     font-family: Roboto, sans-serif;
 }
 .containerFooter{
     margin-left: 10%;
 }
-
 .containerLogoFooter {
     display: flex;
     justify-content: center;
@@ -580,60 +568,92 @@ footer{
     margin-left: 2%;
     font-weight: bold;
 }
-
 .nameFooter2{
     display: flex;
     margin-top: 1%;
     font-weight: bold;
-
 }
-
 .logoFooter{
     width: 60px;
     height: 60px;
 }
-
 .logoFooterHtml{
     width: 70px;
     height: 67px;
 }
-
 .logoFooterJs{
     width: 60px;
     height: 55px;
     margin-top: 5px;
 }
-
 .logoFooterPhp{
     width: 70px;
     height: 70px;
 }
-
 .logoFooterAjax{
     width: 70px;
     height: 60px;
 }
-
 .logoFooterCss{
     width: 62px;
     height: 61px;
     margin-top: 3px;
 }
-
 .logoFooterApache{
     width: 70px;
     height: 60px;
-
 }
-
 .divFooter{
     padding: 0px 20px 0px 20px;
 }
-
 .logoFooter:hover, .logoFooterCss:hover, .logoFooterApache:hover, .logoFooterPhp:hover, .logoFooterAjax:hover, .logoFooterHtml:hover, .logoFooterJs:hover{
     -moz-transform: translate(-5px, -5px);
     -ms-transform: translate(-5px, -5px);
     -o-transform: translate(-5px, -5px);
     -webkit-transform: translate(-5px, -5px);
     transform: translate(-5px, -5px)
+}
+
+.footerPosition {
+    margin-bottom: 10%;
+}
+@media screen and (max-width: 700px){
+    .footerPosition {
+        margin-bottom: 70%;
+    }
+    footer{
+        font-size: 10px;
+    }
+    .containerLogoFooter{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .logoFooter{
+        width: 30px;
+        height: 30px;
+    }
+    .logoFooterCss{
+        width: 31px;
+        height: 30px;
+    }
+    .logoFooterHtml{
+        width: 35px;
+        height: 36px;
+    }
+    .logoFooterJs{
+        width: 30px;
+        height: 25px;
+    }
+    .logoFooterApache{
+        width: 35px;
+        height: 30px;
+    }
+    .logoFooterPhp{
+        width: 35px;
+        height: 35px;
+    }
+    .logoFooterAjax{
+        width: 35px;
+        height: 30px;
+    }
 }

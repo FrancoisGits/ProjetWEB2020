@@ -1,8 +1,3 @@
-</body>
-
-<script type="text/javascript" src="../assets/js/ajaxNomVille.js"></script>
-<script type="text/javascript" src="../assets/js/verifForm.js"></script>
-
 <footer>
     <p class="nameFooter">Developed by :</p>
     <div class="containerFooter">
@@ -21,4 +16,8 @@
         <div class="divFooter"><img src="assets/images/apache.png" alt="" class="logoFooterApache"></div>
     </div>
 </footer>
+</body>
+<script type="text/javascript" src="../assets/js/ajaxNomVille.js"></script>
+<script type="text/javascript" src="../assets/js/verifForm.js"></script>
 </html>
+
