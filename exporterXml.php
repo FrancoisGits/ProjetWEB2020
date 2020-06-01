@@ -37,6 +37,7 @@ $xmlGenerationTo1 = $db->query('UPDATE clients SET xml_generation = 1 WHERE xml_
             </a>
         </div>
 </section>
+<?php require_once './includes/xsdDownload.php'; ?>
 
 
 

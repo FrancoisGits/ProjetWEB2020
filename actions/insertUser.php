@@ -131,7 +131,17 @@ if (!empty($_POST)) {
 
     if (!empty($resultat['guid'])) {
 
-        $client['guid'] = $resultat['guid'];
+        $sqlRequest = $db->prepare("SELECT GUID.guid as guidInit, clients.guid as guidClient, GUID.isSociete FROM clients_guid GUID LEFT JOIN clients ON clients.guid = GUID.guid WHERE GUID.guid = UPPER(:guid)");
+        $sqlRequest->execute([":guid" => $resultat['guid']]);
+        $resultat = $sqlRequest->fetch();
+
+        if((isset($resultat["guidInit"])) && (isset($resultat["guidClient"])) && $resultat["guidInit"] === $resultat["guidClient"]) {
+            var_dump($resultat);
+            header('Location: ../formDone.php');
+            exit();
+        }
+
+        $client['guid'] = $resultat['guidInit'];
         $sqlRequest = $db->prepare("SELECT idVille FROM localisations WHERE nomVille = :nomVille  ");
         $sqlRequest->execute([":nomVille" => $client["ville"]]);
         $resultat = $sqlRequest->fetch();
