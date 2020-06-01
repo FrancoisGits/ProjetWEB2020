@@ -25,16 +25,11 @@ require './actions/xmlGenerator.php';
 
 ?>
 <section>
-    <div class="pAccueil">
-        <p class="pAccueil">
-            Votre questionnaire fichier xml a bien été généré,<br><br>
-            Pour le télécharger veuillez cliquer sur le bouton ci dessous.<br>
-        </p><br><br>
-        <div class="pAccueil">
-            <a href="<?php echo $filePath ?>" download="<?php echo $fileName ?>">
-                <button type="button" id="trigger">Télécharger mon fichier</button>
-            </a>
-        </div>
+    <div class="paragraphe-done">
+        <p>Votre questionnaire fichier xml a bien été généré,</p>
+        <p>Pour le télécharger veuillez cliquer sur le bouton ci dessous.</p>
+        <a href="<?php echo $filePath ?>" download="<?php echo $fileName ?>" class="buttonXml">Télécharger mon fichier</a>
+    </div>
 </section>
 
 <!--/on ne met à jour la table client pour changer le flag xml_generation que si on click sur le bouton-->
