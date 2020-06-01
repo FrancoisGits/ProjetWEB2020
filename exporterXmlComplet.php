@@ -21,7 +21,6 @@ $request = "SELECT
             LEFT JOIN  localisations l ON c.idVille = l.idVille";
 
 require './actions/xmlGenerator.php';
-
 ?>
 <section>
     <div class="pAccueil">
@@ -35,4 +34,18 @@ require './actions/xmlGenerator.php';
             </a>
         </div>
 </section>
+
+<!--/on ne met à jour la table client pour changer le flag xml_generation que si on click sur le bouton-->
+<!-- pour eviter de le faire lors du lancement de la page -->
+<script type="text/javascript">
+    let trigger = document.getElementById("trigger")
+    trigger.onclick = xmlGenerateTo1;
+
+    function xmlGenerateTo1() {
+        let xhttp = new XMLHttpRequest()
+        xhttp.open("GET", "./actions/xmlGenerationTo1.php", true)
+        xhttp.send();
+    }
+</script>
 <?php require_once './includes/xsdDownload.php'; ?>
+<? require_once './includes/footer.php';

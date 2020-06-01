@@ -13,7 +13,7 @@ while ($client = $query->fetch(PDO::FETCH_ASSOC)) {
     $Client = $xml->createElement('Client');
     $xsd->appendChild($Client);
     $Client->setAttribute('id', $client['idClient']);
-    $guid = $xml->createElement("guid", $client['guid']);
+    $guid = $xml->createElement("guid", strtolower($client['guid']));
     $Client->appendChild($guid);
     $civilite = $xml->createElement('civilite', $client['civilite']);
     $Client->appendChild($civilite);

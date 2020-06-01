@@ -1,7 +1,6 @@
 <?php
 require_once("./includes/header.php");
-//todo retire commentaire require
-//require_once("./includes/isClient.php");
+require_once("./includes/isClient.php");
 ?>
 <section>
     <div class="paragraphe" >

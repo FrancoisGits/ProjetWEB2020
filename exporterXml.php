@@ -23,7 +23,6 @@ $request = "SELECT
 
 require './actions/xmlGenerator.php';
 
-$xmlGenerationTo1 = $db->query('UPDATE clients SET xml_generation = 1 WHERE xml_generation = 0');
 ?>
 <section>
     <div class="pAccueil">
@@ -33,11 +32,27 @@ $xmlGenerationTo1 = $db->query('UPDATE clients SET xml_generation = 1 WHERE xml_
         </p><br><br>
         <div class="pAccueil">
             <a href="<?php echo $filePath ?>" download="<?php echo $fileName ?>">
-                <button type="button">Télécharger mon fichier</button>
+                <button type="button" id="trigger">Télécharger mon fichier</button>
             </a>
         </div>
 </section>
-<?php require_once './includes/xsdDownload.php'; ?>
+
+<!--/on ne met à jour la table client pour changer le flag xml_generation que si on click sur le bouton-->
+<!-- pour eviter de le faire lors du lancement de la page -->
+<script type="text/javascript">
+    let trigger = document.getElementById("trigger")
+    trigger.onclick = xmlGenerateTo1;
+
+    function xmlGenerateTo1() {
+        let xhttp = new XMLHttpRequest()
+        xhttp.open("GET", "./actions/xmlGenerationTo1.php", true)
+        xhttp.send();
+    }
+</script>
+<?php
+require_once './includes/xsdDownload.php';
+require_once './includes/footer.php';
+?>
 
 
 
