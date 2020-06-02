@@ -1,6 +1,7 @@
 <?php
 require_once './includes/header.php';
 require_once './bin/config/database.php';
+require_once './includes/isClient.php';
 
 $request = "SELECT 
                 c.idClient,
