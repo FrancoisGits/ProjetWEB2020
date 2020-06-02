@@ -1,48 +1,10 @@
 <?php
 session_start();
 require_once '../bin/config/database.php';
-
-var_dump($_POST);
-
+require_once './formatString.php';
+//var_dump($_POST);
 if (!empty($_POST)) {
     try {
-
-        $_SESSION["civilite"] = $_POST["civilite"];
-        $_SESSION["nom"] = $_POST["nom"];
-        $_SESSION["prenom"] = $_POST["prenom"];
-        if (!empty($_POST["nomSociete"])) {
-            $_SESSION["societe"] = $_POST["nomSociete"];
-        } else {
-            $_SESSION["societe"] = null;
-        }
-        if (!empty($_POST["posteOccupe"])) {
-            $_SESSION["poste"] = $_POST["posteOccupe"];
-        } else {
-            $_SESSION["poste"] = null;
-        }
-
-        $_SESSION["adresse1"] = $_POST["adresse1"];
-        $_SESSION["adresse2"] = $_POST["adresse2"];
-        $_SESSION["codePostal"] = $_POST["codePostal"];
-        $_SESSION["ville"] = $_POST["ville"];
-
-        if (!empty($_POST["telFixe"])) {
-            $_SESSION['tel1'] = $_POST["telFixe"];
-        } else if (!empty($_POST["telSociete"])) {
-            $_SESSION['tel1'] = $_POST["telSociete"];
-        } else {
-            $_SESSION["tel1"] = null;
-        }
-
-        if (!empty($_POST["telPortable"])) {
-            $_SESSION['tel2'] = $_POST["telPortable"];
-        } else if (!empty($_POST["telDirect"])) {
-            $_SESSION['tel2'] = $_POST["telDirect"];
-        } else {
-            $_SESSION["tel2"] = null;
-        }
-        $_SESSION["email"] = $_POST["email"];
-//        var_dump($_SESSION);
 
         // Verifications avant ajout BDD
         if (isset($_POST["civilite"]) && ($_POST["civilite"] === "0" || $_POST["civilite"] === "1")) {
@@ -51,52 +13,52 @@ if (!empty($_POST)) {
             throw new Exception('civilite must be 0 or 1 or notnull');
         }
         if (!empty($_POST["nom"])) {
-            $client["nom"] = trim(strtoupper($_POST["nom"]));
+            $client["nom"] = formatString($_POST["nom"], true);
         } else {
             throw new Exception('nom must be not null');
         }
         if (!empty($_POST["prenom"])) {
-            $client["prenom"] = trim($_POST["prenom"]);
+            $client["prenom"] = formatString($_POST["prenom"], false);
         } else {
             throw new Exception('prenom must be not null');
         }
         if ($_SESSION["isSociete"] === true) {
             if (!empty($_POST["nomSociete"])) {
-                $client["nomSociete"] = trim(strtoupper($_POST["nomSociete"]));
+                $client["nomSociete"] = formatString($_POST["nomSociete"], true);
             } else {
                 throw new Exception('nomSociete must be not null');
             }
             if (!empty($_POST["posteOccupe"])) {
-                $client["fonctionSociete"] = trim(strtoupper($_POST["posteOccupe"]));
+                $client["fonctionSociete"] = formatString($_POST["posteOccupe"], true);
             } else {
                 throw new Exception('posteOccupe must be not null');
             }
             if (!empty($_POST["telSociete"])) {
-                $client["tel1"] = trim($_POST["telSociete"]);
+                $client["tel1"] = formatString($_POST["telSociete"], false);
             } else {
                 throw new Exception('telSociete must be not null');
             }
             if (!empty($_POST["telDirect"])) {
-                $client["tel2"] = trim(strtoupper($_POST["telDirect"]));
+                $client["tel2"] = formatString($_POST["telDirect"], false);
             } else {
                 throw new Exception('telDirect must be not null');
             }
         }
         if (!empty($_POST["adresse1"])) {
-            $client["adresse1"] = trim($_POST["adresse1"]);
+            $client["adresse1"] = formatString($_POST["adresse1"], false);
         } else {
             throw new Exception('adresse1 must be not null');
         }
         if (!empty($_POST["adresse2"])) {
-            $client["adresse2"] = trim($_POST["adresse2"]);
+            $client["adresse2"] = formatString($_POST["adresse2"], false);
         }
         if (!empty($_POST["codePostal"]) && (strlen($_POST["codePostal"]) == 5 || strlen($_POST["codePostal"]) == 4)) {
-            $client["codePostal"] = intval($_POST["codePostal"]);
+            $client["codePostal"] = formatString(intval($_POST["codePostal"]), false);
         } else {
             throw new Exception('codePostal must be not null and length must be 4/5');
         }
         if (!empty($_POST["ville"])) {
-            $client["ville"] = trim($_POST["ville"]);
+            $client["ville"] = formatString($_POST["ville"], false);
         } else {
             throw new Exception('ville must be not null');
         }
@@ -104,12 +66,12 @@ if (!empty($_POST)) {
             $client['nomSociete'] = null;
             $client['posteSociete'] = null;
             if (!empty($_POST["telFixe"])) {
-                $client["tel1"] = trim($_POST["telFixe"]);
+                $client["tel1"] = formatString($_POST["tel1"], false);
             } else {
                 throw new Exception('telFixe must be not null');
             }
             if (!empty($_POST["telPortable"])) {
-                $client["tel2"] = trim(strtoupper($_POST["telPortable"]));
+                $client["tel2"] = trim(($_POST["telPortable"]));
             } else {
                 throw new Exception('telPortable must be not null');
             }
@@ -123,6 +85,44 @@ if (!empty($_POST)) {
     } catch (Exception $e) {
         die($e->getMessage());
     }
+
+    $_SESSION["civilite"] = $_POST["civilite"];
+    $_SESSION["nom"] = $_POST["nom"];
+    $_SESSION["prenom"] = $_POST["prenom"];
+    if (!empty($_POST["nomSociete"])) {
+        $_SESSION["societe"] = $_POST["nomSociete"];
+    } else {
+        $_SESSION["societe"] = null;
+    }
+    if (!empty($_POST["posteOccupe"])) {
+        $_SESSION["poste"] = $_POST["posteOccupe"];
+    } else {
+        $_SESSION["poste"] = null;
+    }
+
+    $_SESSION["adresse1"] = $_POST["adresse1"];
+    $_SESSION["adresse2"] = $_POST["adresse2"];
+    $_SESSION["codePostal"] = $_POST["codePostal"];
+    $_SESSION["ville"] = $_POST["ville"];
+
+    if (!empty($_POST["telFixe"])) {
+        $_SESSION['tel1'] = $_POST["telFixe"];
+    } else if (!empty($_POST["telSociete"])) {
+        $_SESSION['tel1'] = $_POST["telSociete"];
+    } else {
+        $_SESSION["tel1"] = null;
+    }
+
+    if (!empty($_POST["telPortable"])) {
+        $_SESSION['tel2'] = $_POST["telPortable"];
+    } else if (!empty($_POST["telDirect"])) {
+        $_SESSION['tel2'] = $_POST["telDirect"];
+    } else {
+        $_SESSION["tel2"] = null;
+    }
+    $_SESSION["email"] = $_POST["email"];
+
+
     // on verifie que l'email trouve bien correspondance avec un guid dans la table des guids.
     $sqlRequest = $db->prepare("SELECT guid FROM clients_guid WHERE email = :email  ");
     $sqlRequest->execute([":email" => $client["email"]]);
@@ -135,7 +135,7 @@ if (!empty($_POST)) {
         $sqlRequest->execute([":guid" => $resultat['guid']]);
         $resultat = $sqlRequest->fetch();
 
-        if((isset($resultat["guidInit"])) && (isset($resultat["guidClient"])) && $resultat["guidInit"] === $resultat["guidClient"]) {
+        if ((isset($resultat["guidInit"])) && (isset($resultat["guidClient"])) && $resultat["guidInit"] === $resultat["guidClient"]) {
             var_dump($resultat);
             header('Location: ../formDone.php');
             exit();

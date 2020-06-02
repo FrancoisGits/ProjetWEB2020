@@ -1,6 +1,6 @@
 <?php
 require_once("./includes/header.php");
-//require_once("./includes/isClient.php");
+require_once("./includes/isClient.php");
 ?>
 <section class="footerPosition">
     <img src="assets/images/forbidden.png" alt="'Attention à votre mail !!" class="logoPage">
