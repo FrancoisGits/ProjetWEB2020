@@ -6,7 +6,7 @@ require('../config/database.php');
 function connectDb($dbName)
 {
     try {
-        $dsn = !$dbName ? 'mysql:host=' . DB_HOST . ';port=' . DB_PORT : 'mysql:dbname=connectlife_test' . ';host=' . DB_HOST . ';port=' . DB_PORT;
+        $dsn = !$dbName ? 'mysql:host=' . DB_HOST . ';port=' . DB_PORT : 'mysql:dbname=connect_life' . ';host=' . DB_HOST . ';port=' . DB_PORT;
         echo $dsn;
         $db = new PDO ($dsn, DB_USER, DB_PASS);
     } catch (PDOException $e) {
@@ -22,9 +22,10 @@ function initFixture() {
     echo "Script initialisation Fixtures lancé ! \n";
 
     try {
-        $handle = fopen('../scripts/connectlife_fixtures.sql', 'rb');
+        $handle = fopen('./connectlife_fixtures.sql', 'rb');
         while(feof($handle) !== true) {
             $buffer = fgets($handle);
+            echo ($buffer);
             $db->exec(utf8_encode($buffer));
         }
         fclose($handle);

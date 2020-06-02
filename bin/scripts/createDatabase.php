@@ -42,9 +42,10 @@ function initLocalisation() {
     echo "Script de fixtures CP/Ville lancé ! \n";
 
     try {
-        $handle = fopen('../scripts/connectlife_localisations_data.sql', 'rb');
+        $handle = fopen('./connectlife_localisations_data.sql', 'rb');
         while(feof($handle) !== true) {
             $buffer = fgets($handle);
+            echo($buffer);
             $db->exec(utf8_encode($buffer));
         }
         fclose($handle);

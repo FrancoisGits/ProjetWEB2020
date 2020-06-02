@@ -11,10 +11,11 @@ CREATE TABLE IF NOT EXISTS Localisations
 CREATE TABLE IF NOT EXISTS Clients
 (
     idClient        int             auto_increment primary key,
+    guid            varchar(36)     not null,
     civilite        tinyint(1)      not null,
     nom             varchar(100)    not null,
     prenom          varchar(100)    not null,
-    idSocieteCli    int(10)         null,
+    nomSociete      varchar(50)     null,
     fonctionSociete varchar(25)     null,
     adresse1        varchar(200)    not null,
     adresse2        varchar(200)    null,
@@ -22,7 +23,10 @@ CREATE TABLE IF NOT EXISTS Clients
     telephone1      varchar(12)     null,
     telephone2      varchar(12)     null,
     email           varchar(100)    not null,
-
+    xml_generation  tinyint(1) default 0 not null,
+    
+    constraint UNIK_GUID
+        unique(guid),
     constraint FK_ID_VILLE
         foreign key (idVille) references localisations (idVille)
             on update cascade
