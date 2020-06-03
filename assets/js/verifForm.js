@@ -179,7 +179,23 @@ form.addEventListener('submit', function (e) {
                     document.querySelector('.messageErreurTelPortable').textContent = 'Veuillez indiquer un numéro de téléphone valide'
                     document.querySelector('.messageErreurTelFixe').textContent = 'Veuillez indiquer un numéro de téléphone valide'
                 }
-                if ((telFixe.value.trim() !== '' && /^\d+$/.test(telFixe.value) === true) || (telPortable.value.trim() !== '' && /^\d+$/.test(telPortable.value) === true)) {
+                if ((telFixe.value.trim() !== '' && /^\d+$/.test(telFixe.value) === true) && (telPortable.value.trim() !== '' && /^\d+$/.test(telPortable.value) === false)) {
+                    console.log("1 des deux faux")
+                    test = false
+                    telFixe.style.borderColor = 'white'
+                    telPortable.style.borderColor = 'red'
+                    document.querySelector('.messageErreurTelPortable').textContent = 'Veuillez indiquer un numéro de téléphone valide'
+                    document.querySelector('.messageErreurTelFixe').textContent = ''
+                } else if ((telFixe.value.trim() !== '' && /^\d+$/.test(telFixe.value) === false) && (telPortable.value.trim() !== '' && /^\d+$/.test(telPortable.value) === true)) {
+                    console.log("1 des deux faux")
+                    test = false
+                    telFixe.style.borderColor = 'red'
+                    telPortable.style.borderColor = 'white'
+                    document.querySelector('.messageErreurTelPortable').textContent = ''
+                    document.querySelector('.messageErreurTelFixe').textContent = 'Veuillez indiquer un numéro de téléphone valide'
+                } else if ((telFixe.value.trim() !== '' && /^\d+$/.test(telFixe.value) === true) || (telPortable.value.trim() !== '' && /^\d+$/.test(telPortable.value) === true)) {
+                    console.log(telFixe.value.trim())
+                    console.log(telPortable.value.trim())
                     console.log("tel Ok")
                     document.querySelector('.messageErreurTelFixe').textContent = ''
                     document.querySelector('.messageErreurTelPortable').textContent = ''
