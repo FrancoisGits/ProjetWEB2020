@@ -30,7 +30,7 @@ require './actions/xmlGenerator.php';
 
         </div>
         <div class="paragraphe-milieu">
-            <a href="<?php echo $filePath ?>" download="<?php echo $fileName ?>" class="button">Télécharger</a>
+            <a href="<?php echo $filePath ?>" download="<?php echo $fileName ?>"  class="button">Télécharger</a>
         </div>
     </section>
 
