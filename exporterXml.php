@@ -32,7 +32,7 @@ require './actions/xmlGenerator.php';
         <p>Pour le télécharger veuillez cliquer sur le bouton ci dessous.</p>
     </div>
     <div class="paragraphe-milieu">
-        <a href="<?php echo $filePath ?>" download="<?php echo $fileName ?>" class="button">Télécharger</a>
+        <a href="<?php echo $filePath ?>" download="<?php echo $fileName ?>" id ="trigger" class="button">Télécharger</a>
     </div>
 </section>
 
