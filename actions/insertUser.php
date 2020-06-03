@@ -66,14 +66,17 @@ if (!empty($_POST)) {
             $client['nomSociete'] = null;
             $client['posteSociete'] = null;
             if (!empty($_POST["telFixe"])) {
-                $client["tel1"] = formatString($_POST["tel1"], false);
+                $client["tel1"] = formatString($_POST["telFixe"], false);
+            } else if (!empty($_POST["telPortable"])) {
+//                var_dump($_POST["telPortable"]);
+//                exit();
+                $client["tel2"] = formatString(($_POST["telPortable"]), false);
+            } else if (!empty($_POST["telFixe"]) && !empty($_POST["telPortable"])) {
+                $client["tel1"] = formatString($_POST["telFixe"], false);
+                $client["tel2"] = formatString(($_POST["telPortable"]), false);
+
             } else {
-                throw new Exception('telFixe must be not null');
-            }
-            if (!empty($_POST["telPortable"])) {
-                $client["tel2"] = trim(($_POST["telPortable"]));
-            } else {
-                throw new Exception('telPortable must be not null');
+                throw new Exception('one portable must be not null');
             }
         }
         if (!empty($_POST["email"])) {
