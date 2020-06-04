@@ -8,7 +8,7 @@ if (!empty($_POST)) {
 
         // Verifications avant ajout BDD
         if (isset($_POST["civilite"]) && ($_POST["civilite"] === "0" || $_POST["civilite"] === "1")) {
-            $client["civilite"] = intval($_POST["civilite"]);
+            $client["civilite"] = htmlspecialchars(intval($_POST["civilite"]));
         } else {
             throw new Exception('civilite must be 0 or 1 or notnull');
         }
